@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="/ (Mask)"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="DEL"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="AC"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="243dp"
+        android:layout_height="129dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="4"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="7"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="8"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="9"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="2"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="."
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:text="6"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="↑"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="←"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="→"
+        tools:layout_editor_absoluteX="324dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+    <Button
+        android:id="@+id/button23"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        tools:layout_editor_absoluteX="324dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+    <Button
+        android:id="@+id/button24"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="*"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button25"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        tools:layout_editor_absoluteX="324dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button26"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="^"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button27"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="¹"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <Button
+        android:id="@+id/button28"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="!"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button
+        android:id="@+id/button29"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="%"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:text="Subnet"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <Button
+        android:id="@+id/button31"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:text="Recuperar"
+        tools:layout_editor_absoluteX="271dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="↓"
+        tools:layout_editor_absoluteX="324dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+</android.support.constraint.ConstraintLayout>
