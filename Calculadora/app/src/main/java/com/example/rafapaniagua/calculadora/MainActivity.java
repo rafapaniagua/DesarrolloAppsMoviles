@@ -6,20 +6,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView pantalla;
-    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnpunto, btnmask,
-            btnborrar, btnlimpiar, btnigual, btnarriba, btnabajo, btnizquierda, btnderecha,
-            btnsubnet, btnsuma, btnresta, btnmultiplicacion, btndivision, btnexponente, btnraiz,
-            btnfactorial, btnporcentaje, btnrecuperar;
+    private TextView txt_principal, txt_superior;
+    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn_punto, btn_igual,
+            btn_borrar, btn_limpiar, btn_izquierda, btn_derecha,
+            btn_suma, btn_resta, btn_multi, btn_div, btn_exp, btn_raiz,
+            btn_fact, btn_porc, btn_recuperar;
+    private String resultado, operador1, operador2, operacion, formato = "#.####";
+
+    DecimalFormat auxiliar;
+
+    int decimales = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pantalla = (TextView) findViewById(R.id.pantalla);
+        txt_principal = (TextView) findViewById(R.id.txt_principal);
+        txt_superior = (TextView) findViewById(R.id.txt_superior);
 
         btn0 = (Button) findViewById(R.id.btn0);
         btn1 = (Button) findViewById(R.id.btn1);
@@ -32,122 +40,241 @@ public class MainActivity extends AppCompatActivity {
         btn8 = (Button) findViewById(R.id.btn8);
         btn9 = (Button) findViewById(R.id.btn9);
 
-        btnpunto = (Button) findViewById(R.id.btnpunto);
-        btnmask = (Button) findViewById(R.id.btnmask);
-        btnborrar = (Button) findViewById(R.id.btnborrar);
-        btnlimpiar = (Button) findViewById(R.id.btnlimpiar);
-        btnigual = (Button) findViewById(R.id.btnigual);
+        btn_punto = (Button) findViewById(R.id.btn_punto);
+        btn_borrar = (Button) findViewById(R.id.btn_borrar);
+        btn_limpiar = (Button) findViewById(R.id.btn_limpiar);
+        btn_igual = (Button) findViewById(R.id.btn_igual);
 
-        btnarriba = (Button) findViewById(R.id.btnarriba);
-        btnabajo = (Button) findViewById(R.id.btnabajo);
-        btnizquierda = (Button) findViewById(R.id.btnizquierda);
-        btnderecha = (Button) findViewById(R.id.btnderecha);
+        btn_izquierda = (Button) findViewById(R.id.btn_izquierda);
+        btn_derecha = (Button) findViewById(R.id.btn_derecha);
 
-        btnsubnet = (Button) findViewById(R.id.btnsubnet);
+        btn_suma = (Button) findViewById(R.id.btn_suma);
+        btn_resta = (Button) findViewById(R.id.btn_resta);
+        btn_multi = (Button) findViewById(R.id.btn_multi);
+        btn_div = (Button) findViewById(R.id.btn_div);
 
-        btnsuma = (Button) findViewById(R.id.btnsuma);
-        btnresta = (Button) findViewById(R.id.btnresta);
-        btnmultiplicacion = (Button) findViewById(R.id.btnmultiplicacion);
-        btndivision = (Button) findViewById(R.id.btndivision);
+        btn_exp = (Button) findViewById(R.id.btn_exp);
+        btn_raiz = (Button) findViewById(R.id.btn_raiz);
+        btn_fact = (Button) findViewById(R.id.btn_fact);
+        btn_porc = (Button) findViewById(R.id.btn_porc);
 
-        btnexponente = (Button) findViewById(R.id.btnexponente);
-        btnraiz = (Button) findViewById(R.id.btnraiz);
-        btnfactorial = (Button) findViewById(R.id.btnfactorial);
-        btnporcentaje = (Button) findViewById(R.id.btnporcentaje);
+        btn_recuperar = (Button) findViewById(R.id.btn_recuperar);
 
-        btnrecuperar = (Button) findViewById(R.id.btnrecuperar);
+        auxiliar = new DecimalFormat(formato);
     }
 
     public void eventoButton(View view){
         switch (view.getId()){
             case R.id.btn0:
-                pantalla.setText(pantalla.getText().toString()+"0");
+                txt_principal.setText(txt_principal.getText().toString()+"0");
+                txt_superior.setText(txt_superior.getText().toString()+"0");
                 break;
             case R.id.btn1:
-                pantalla.setText(pantalla.getText().toString()+"1");
+                txt_principal.setText(txt_principal.getText().toString()+"1");
+                txt_superior.setText(txt_superior.getText().toString()+"1");
                 break;
             case R.id.btn2:
-                pantalla.setText(pantalla.getText().toString()+"2");
+                txt_principal.setText(txt_principal.getText().toString()+"2");
+                txt_superior.setText(txt_superior.getText().toString()+"2");
                 break;
             case R.id.btn3:
-                pantalla.setText(pantalla.getText().toString()+"3");
+                txt_principal.setText(txt_principal.getText().toString()+"3");
+                txt_superior.setText(txt_superior.getText().toString()+"3");
                 break;
             case R.id.btn4:
-                pantalla.setText(pantalla.getText().toString()+"4");
+                txt_principal.setText(txt_principal.getText().toString()+"4");
+                txt_superior.setText(txt_superior.getText().toString()+"4");
                 break;
             case R.id.btn5:
-                pantalla.setText(pantalla.getText().toString()+"5");
+                txt_principal.setText(txt_principal.getText().toString()+"5");
+                txt_superior.setText(txt_superior.getText().toString()+"5");
                 break;
             case R.id.btn6:
-                pantalla.setText(pantalla.getText().toString()+"6");
+                txt_principal.setText(txt_principal.getText().toString()+"6");
+                txt_superior.setText(txt_superior.getText().toString()+"6");
                 break;
             case R.id.btn7:
-                pantalla.setText(pantalla.getText().toString()+"7");
+                txt_principal.setText(txt_principal.getText().toString()+"7");
+                txt_superior.setText(txt_superior.getText().toString()+"7");
                 break;
             case R.id.btn8:
-                pantalla.setText(pantalla.getText().toString()+"8");
+                txt_principal.setText(txt_principal.getText().toString()+"8");
+                txt_superior.setText(txt_superior.getText().toString()+"8");
                 break;
             case R.id.btn9:
-                pantalla.setText(pantalla.getText().toString()+"9");
+                txt_principal.setText(txt_principal.getText().toString()+"9");
+                txt_superior.setText(txt_superior.getText().toString()+"9");
                 break;
-            case R.id.btnpunto:
-                pantalla.setText(pantalla.getText().toString()+".");
+            case R.id.btn_punto:
+                String textoActual = txt_principal.getText().toString();
+                if (textoActual.length()<=0){
+                    txt_principal.setText(textoActual+"0.");
+                    txt_superior.setText(textoActual+"0.");
+                } else{
+                    if(!comprobarPunto(textoActual)){
+                        txt_principal.setText(textoActual+".");
+                        txt_superior.setText(textoActual+".");
+                    }
+                }
                 break;
-            case R.id.btnmask:
-                pantalla.setText(pantalla.getText().toString()+"/");
-                break;
-            case R.id.btnborrar:
+            case R.id.btn_borrar:
+                String textoActual1, textoActual2;
 
-                break;
-            case R.id.btnlimpiar:
-                pantalla.setText("");
-                break;
-            case R.id.btnigual:
-                pantalla.setText(pantalla.getText().toString()+"=");
-                break;
-            case R.id.btnarriba:
+                textoActual1 = txt_principal.getText().toString();
+                if (textoActual1.length()>0){
+                    textoActual1 = textoActual1.substring(0, textoActual1.length()-1);
+                    txt_principal.setText(textoActual1);
+                }
 
+                textoActual2 = txt_superior.getText().toString();
+                if (textoActual2.length()>0){
+                    textoActual2 = textoActual2.substring(0, textoActual2.length()-1);
+                    txt_superior.setText(textoActual2);
+                }
                 break;
-            case R.id.btnabajo:
-
+            case R.id.btn_limpiar:
+                txt_principal.setText("");
+                txt_superior.setText("");
+                operador1="";
+                operador2="";
+                operacion="";
                 break;
-            case R.id.btnizquierda:
-
+            case R.id.btn_igual:
+                operador2= txt_principal.getText().toString();
+                if((!operador1.equals("")) || (!operador2.equals(""))){
+                    resultado=procesar(operador1,operador2,operacion);
+                    txt_principal.setText(auxiliar.format(Double.parseDouble(resultado)));
+                    txt_superior.setText("");
+                    operador1="";
+                    operador2="";
+                    operacion="";
+                }
                 break;
-            case R.id.btnderecha:
-
+            case R.id.btn_izquierda:
+                if (formato.length()>2) {
+                    formato = formato.substring(0, formato.length() - 1);
+                    auxiliar = new DecimalFormat(formato);
+                    if (!resultado.equals("")) {
+                        txt_principal.setText(auxiliar.format(Double.parseDouble(resultado)));
+                    }
+                    decimales--;
+                }
                 break;
-            case R.id.btnsubnet:
-
+            case R.id.btn_derecha:
+                if (formato.length()<12){
+                    formato = formato + "#";
+                    auxiliar = new DecimalFormat(formato);
+                    if(!resultado.equals("")){
+                        txt_principal.setText(auxiliar.format(Double.parseDouble(resultado)));
+                    }
+                    decimales++;
+                }
                 break;
-            case R.id.btnsuma:
-                pantalla.setText(pantalla.getText().toString()+"+");
+            case R.id.btn_suma:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="suma";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"+");
+                }
                 break;
-            case R.id.btnresta:
-                pantalla.setText(pantalla.getText().toString()+"-");
+            case R.id.btn_resta:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="resta";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"-");
+                }
                 break;
-            case R.id.btnmultiplicacion:
-                pantalla.setText(pantalla.getText().toString()+"*");
+            case R.id.btn_multi:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="multiplicacion";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"*");
+                }
                 break;
-            case R.id.btndivision:
-                pantalla.setText(pantalla.getText().toString()+"/");
+            case R.id.btn_div:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="division";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"/");
+                }
                 break;
-            case R.id.btnexponente:
-                pantalla.setText(pantalla.getText().toString()+"^");
+            case R.id.btn_exp:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="exponente";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"^");
+                }
                 break;
-            case R.id.btnraiz:
-                pantalla.setText(pantalla.getText().toString()+"¹");
+            case R.id.btn_raiz:
+                Double raiz = Math.sqrt(Double.parseDouble(txt_principal.getText().toString()));
+                txt_principal.setText(String.valueOf(raiz));
+                resultado = txt_principal.getText().toString();
+                txt_principal.setText(auxiliar.format(raiz));
+                txt_superior.setText("");
+                operador1="";
+                operador2="";
+                operacion="";
                 break;
-            case R.id.btnfactorial:
-                pantalla.setText(pantalla.getText().toString()+"!");
+            case R.id.btn_fact:
+                int numero, acumulado=1;
+                if(!comprobarPunto(txt_principal.getText().toString())){
+                    numero = Integer.parseInt(txt_principal.getText().toString());
+                    for (int i = 1; i <= numero; i++) {
+                        acumulado = acumulado*i;
+                    }
+                    txt_principal.setText(String.valueOf(acumulado));
+                    resultado = txt_principal.getText().toString();
+                    txt_superior.setText("");
+                    operador1="";
+                    operador2="";
+                    operacion="";
+                }
+            case R.id.btn_porc:
+                if(!txt_principal.getText().toString().equals("")){
+                    operador1= txt_principal.getText().toString();
+                    operacion="porcentaje";
+                    txt_principal.setText("");
+                    txt_superior.setText(txt_superior.getText().toString()+"%");
+                }
                 break;
-            case R.id.btnporcentaje:
-                pantalla.setText(pantalla.getText().toString()+"%");
-                break;
-            case R.id.btnrecuperar:
-
+            case R.id.btn_recuperar:
+                txt_principal.setText(txt_principal.getText().toString()+auxiliar.format(Double.parseDouble(resultado)));
+                txt_superior.setText(txt_superior.getText().toString()+auxiliar.format(Double.parseDouble(resultado)));
                 break;
         }
+    }
 
+    public boolean comprobarPunto(String textoActual){
+        for (int i = 0; i < textoActual.length(); i++) {
+            if (textoActual.charAt(i)=='.'){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String procesar(String operador1, String operador2, String operacion){
+        Double resultado=0.0;
+        //String respuesta;
+        if (operacion.equals("suma")){
+            resultado= Double.parseDouble(operador1)+Double.parseDouble(operador2);
+        } else if (operacion.equals("resta")){
+            resultado= Double.parseDouble(operador1)-Double.parseDouble(operador2);
+        } else if (operacion.equals("multiplicacion")){
+            resultado= Double.parseDouble(operador1)*Double.parseDouble(operador2);
+        } else if (operacion.equals("division")){
+            resultado= Double.parseDouble(operador1)/Double.parseDouble(operador2);
+        } else if (operacion.equals("exponente")){
+            resultado = Math.pow(Double.parseDouble(operador1),Double.parseDouble(operador2));
+        } else if (operacion.equals("porcentaje")){
+            resultado= Double.parseDouble(operador1)*(Double.parseDouble(operador2)/100);
+        }
+        //respuesta = String.valueOf(resultado);
+        return resultado.toString();
     }
 }
