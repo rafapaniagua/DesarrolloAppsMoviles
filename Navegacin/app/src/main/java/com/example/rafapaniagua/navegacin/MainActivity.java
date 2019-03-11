@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    Mascota mascota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void activity2(View view){
+        mascota = new Mascota("Richard Parker", "Cuyo", 3);
+
         Intent intent = new Intent(
                 this,
                 Activity2.class
         );
 
-        intent.putExtra("nombre", "Rafa");
+        //intent.putExtra("nombre", "Rafa");
+        intent.putExtra("pet",mascota);
 
         startActivity(intent);
     }

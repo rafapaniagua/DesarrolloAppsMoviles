@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 public class Activity2 extends AppCompatActivity {
 
     @Override
@@ -13,13 +15,18 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
 
-        String nombre = getIntent()
+        Mascota masc = (Mascota) getIntent()
                 .getExtras()
-                .getString("nombre");
+                .getSerializable("pet");
+
+        String mensaje = "Detalles de la mascota\n\n" +
+                         "-Nombre: " + masc.nombre + "\n" +
+                         "-Raza: " + masc.raza + "\n" +
+                         "-Edad: " + masc.edad;
 
         Toast toast = Toast.makeText(
                 getApplicationContext(),
-                nombre,
+                mensaje,
                 Toast.LENGTH_LONG
         );
 
