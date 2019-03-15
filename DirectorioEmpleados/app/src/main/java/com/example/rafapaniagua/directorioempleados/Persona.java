@@ -4,20 +4,16 @@ public class Persona {
     private String nombre;
     private String apellidoP;
     private String apellidoM;
-    private int noNomina;
-    private int telefono;
     private String area;
 
     public Persona() {
 
     }
 
-    public Persona(String nombre, String apellidoP, String apellidoM, int noNomina, int telefono, String area) {
+    public Persona(String nombre, String apellidoP, String apellidoM, String area) {
         this.nombre = nombre;
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
-        this.noNomina = noNomina;
-        this.telefono = telefono;
         this.area = area;
     }
 
@@ -43,22 +39,6 @@ public class Persona {
 
     public void setApellidoM(String apellidoM) {
         this.apellidoM = apellidoM;
-    }
-
-    public int getNoNomina() {
-        return noNomina;
-    }
-
-    public void setNoNomina(int noNomina) {
-        this.noNomina = noNomina;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
     }
 
     public String getArea() {

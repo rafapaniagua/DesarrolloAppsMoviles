@@ -22,8 +22,6 @@ public class FormEmpleados extends AppCompatActivity {
     private Button btn_registrar;
     private Button btn_cancelar;
 
-    private Intent main;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,38 +37,38 @@ public class FormEmpleados extends AppCompatActivity {
         this.btn_cancelar = (Button) findViewById(R.id.btn_cancelar);
         lista_personas = new ArrayList<Persona>();
 
-        if(getIntent().hasExtra("lista_personas")){
+        if(getIntent().hasExtra("lista")){
             this.lista_personas = (ArrayList<Persona>) getIntent().getExtras().getSerializable("lista_personas");
         }
     }
 
     public void guardar(View view){
-        if(!this.validar_vacios()){
+        if(this.validar_vacios()){
             Toast.makeText(this,"Debes ingresar todos los campos", Toast.LENGTH_LONG).show();
         }else{
-            lista_personas.add(new Persona(edt_nombre.getText().toString().trim(),
-                                            edt_apellidoP.getText().toString().trim(),
-                                            edt_apellidoM.getText().toString().trim(),
-                                            Integer.parseInt(edt_noNomina.getText().toString().trim()),
-                                            Integer.parseInt(edt_telefono.getText().toString().trim()),
-                                            edt_area.getText().toString().trim()));
+            lista_personas.add(new Persona(edt_nombre.getText().toString(),
+                                            edt_apellidoP.getText().toString(),
+                                            edt_apellidoM.getText().toString(),
+                                            edt_area.getText().toString()));
 
-            main.putExtra("lista_personas", this.lista_personas);
+            Intent main = new Intent(this, MainActivity.class);
+            main.putExtra("lista", this.lista_personas);
             startActivity(main);
+            finish();
         }
     }
 
     public void cancelar(View view) {
-        main.putExtra("lista_personas", this.lista_personas);
+        Intent main = new Intent(this, MainActivity.class);
+        main.putExtra("lista", this.lista_personas);
         startActivity(main);
+        finish();
     }
 
     public boolean validar_vacios(){
-        return (edt_nombre.getText().toString().trim().length() > 0
-                && edt_apellidoP.getText().toString().trim().length() > 0
-                && edt_apellidoM.getText().toString().trim().length() > 0
-                && edt_noNomina.getText().toString().trim().length() > 0
-                && edt_telefono.getText().toString().trim().length() > 0
-                && edt_area.getText().toString().trim().length() > 0);
+        return (edt_nombre.getText().toString().equals("")
+                || edt_apellidoP.getText().toString().equals("")
+                || edt_apellidoM.getText().toString().equals("")
+                || edt_area.getText().toString().equals(""));
     }
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         this.btn_agregar = (Button) findViewById(R.id.btn_agregar);
         lista_personas = new ArrayList<Persona>();
 
-        if(getIntent().hasExtra("lista_personas")){
+        if(getIntent().hasExtra("lista")){
             this.lista_personas = (ArrayList<Persona>) getIntent().getExtras().getSerializable("lista_personas");
         }
 
@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void agregar(View view){
         Intent formulario = new Intent(this, FormEmpleados.class);
-        formulario.putExtra("lista_personas",this.lista_personas);
+        formulario.putExtra("lista",this.lista_personas);
         startActivity(formulario);
+        finish();
     }
 
     public void buscar(View view){
@@ -58,7 +59,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String filtrar_personas(){
-        String coincidencias = "Coincidencias en Búsqueda";
+        String busqueda = edt_busqueda.getText().toString();
+        String coincidencias = "";
+        String temp = "";
+
+        for(Persona persona_temp : this.lista_personas){
+            temp = persona_temp.getNombre() + " " + persona_temp.getApellidoP() + " " + persona_temp.getApellidoM() + "\n" +
+                    " - " + persona_temp.getArea() + "\n____________________\n";
+            if(temp.contains(busqueda)){
+                coincidencias += temp;
+            }
+            temp = "";
+        }
+
         return coincidencias;
     }
 
@@ -68,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         }else{
             String lista = "";
             for (Persona persona_temp : this.lista_personas){
-                lista += persona_temp.getNombre() + " " + persona_temp.getApellidoP() + " " + persona_temp.getApellidoM() +
-                        " - " + persona_temp.getNoNomina() + "\n____________________\n";
+                lista += persona_temp.getNombre() + " " + persona_temp.getApellidoP() + " " + persona_temp.getApellidoM() + "\n" +
+                        " - " + persona_temp.getArea() + "\n____________________\n";
             }
             txt_personas.setText(lista);
         }
