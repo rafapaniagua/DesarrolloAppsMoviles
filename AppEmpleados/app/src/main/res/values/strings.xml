@@ -1,0 +1,14 @@
+<resources>
+    <string name="grl"></string>
+    <string name="titulo">Lista de personas</string>
+    <string name="app_name">AppEmpleados</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="btn_registrar">Registrar</string>
+
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="tv_nombre">Nombres:</string>
+    <string name="tv_apellidoP">Apellido Paterno:</string>
+    <string name="tv_apellidoM">Apellido Materno:</string>
+    <string name="tv_area">Área:</string>
+</resources>

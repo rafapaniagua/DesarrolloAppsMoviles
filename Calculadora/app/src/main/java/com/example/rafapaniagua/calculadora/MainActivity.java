@@ -249,6 +249,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Método comprobarPunto recibe un número capturado en la calculadora
+     * en formato String y lo procesa analizando si contiene un punto
+     * dentro de los caracteres que lo conforman.
+     * En caso de contenerlo devuelve verdadero, de lo contrario
+     * devuelve falso.
+     * @author Rafael Paniagua Soto
+     * @version Calculadora v1.0
+     * @param String
+     * @return boolean
+    */
     public boolean comprobarPunto(String textoActual){
         for (int i = 0; i < textoActual.length(); i++) {
             if (textoActual.charAt(i)=='.'){
