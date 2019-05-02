@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Languages</string>
+    <string name="tv1">Test application</string>
+    <string name="tv2">We are going to test the languages</string>
+    <string name="tv3">We are testing the application</string>
+    <string name="tv4">Another phrase for test</string>
+</resources>

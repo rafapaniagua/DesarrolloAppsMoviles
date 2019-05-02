@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Idiomas</string>
+    <string name="tv1">Aplicación de prueba</string>
+    <string name="tv2">Vamos a probar los idiomas</string>
+    <string name="tv3">Estamos probando la aplicación</string>
+    <string name="tv4">Otra frase para probar</string>
+</resources>
