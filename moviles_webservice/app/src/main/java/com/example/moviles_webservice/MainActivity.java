@@ -25,7 +25,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private RequestQueue requestQueue;
-    private final String BASEURL = "http://192.168.1.66:8000/api/mascota/";
+    private final String BASEURL = "http://192.168.137.1:8000/api/mascota/";
 
     //AL INICIAR EL SERVICIO DE LARAVEL HAY QUE EJECUTAR ESTE COMANDO
     //php artisan serve --host 0.0.0.0 -- port 8000
@@ -90,14 +90,14 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d("rta_servidor", response);
                         Toast.makeText(ctx, "Mascota encontrada", Toast.LENGTH_SHORT).show();
-                        leerDatos(response);
+                        recuperarDatos(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error_servidor", error.toString());
                 Toast.makeText(ctx, "Lo siento, no se encontró ninguna mascota en la búsqueda", Toast.LENGTH_SHORT).show();
-                et_id.setText("0");
+                et_id.setText("");
                 et_nombre.setText("");
                 et_raza.setText("");
                 et_edad.setText("");
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d("rta_servidor", response);
                         Toast.makeText(ctx, "Mascota agregada exitosamente", Toast.LENGTH_LONG).show();
-                        leerDatos(response);
+                        recuperarDatos(response);
                     }
                 },  new Response.ErrorListener() {
             @Override
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d("rta_servidor", response);
                         Toast.makeText(ctx, "Los datos de la mascota\nfueron actualizados exitosamente", Toast.LENGTH_LONG).show();
-                        leerDatos(response);
+                        recuperarDatos(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -187,8 +187,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         Log.d("rta_servidor", response);
                         Toast.makeText(ctx, "Mascota Eliminada Exitosamente", Toast.LENGTH_SHORT).show();
-                        //LIMPIAMOS LOS CAMPOS DE LA VISTA
-                        et_id.setText("0");
+                        et_id.setText("");
                         et_nombre.setText("");
                         et_raza.setText("");
                         et_edad.setText("");
@@ -198,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Log.d("error_servidor", error.toString());
                 Toast.makeText(ctx, "Lo siento, no existe la mascota", Toast.LENGTH_LONG).show();
-                et_id.setText("0");
+                et_id.setText("");
                 et_nombre.setText("");
                 et_raza.setText("");
                 et_edad.setText("");
@@ -218,28 +217,24 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(strq);
     }
 
-    public void leerDatos(String res) {
+    public void recuperarDatos(String res) {
         try {
-            //Convertimos el string en un objeto de JSON
             JSONObject object = new JSONObject(res);
 
-            //EL JSON ORIGINAL LO DIVIDIMOS EN LOS TRES RESULTADOS PRINCIPALES
-            String success = object.get("success").toString();
+            /*String success = object.get("success").toString();
             String result = object.get("result").toString();
-            String errors = object.get("errors").toString();
+            String errors = object.get("errors").toString();*/
 
-            if (success.equals("true")){
-                //CASTEAMOS CADA CADENA SEPARADA EN UN NUEVO OBJETO DE JSON
-                JSONObject json_result = new JSONObject(result);
+            //if (success.equals("true")){
+                //JSONObject json_result = new JSONObject(result);
 
-                //MOSTRAMOS LOS DATOS EN CADA UNO DE LOS CAMPOS DE LA APP
-                et_id.setText(json_result.get("id").toString());
-                et_nombre.setText(json_result.get("nombre").toString());
-                et_raza.setText(json_result.get("raza").toString());
-                et_edad.setText(json_result.get("edad").toString());
-            }else{
-                Toast.makeText(ctx, "Error: " + errors, Toast.LENGTH_SHORT).show();
-            }
+                et_id.setText(object.get("id").toString());
+                et_nombre.setText(object.get("nombre").toString());
+                et_raza.setText(object.get("raza").toString());
+                et_edad.setText(object.get("edad").toString());
+            //}else{
+                //Toast.makeText(ctx, "Error: " + errors, Toast.LENGTH_SHORT).show();
+            //}
 
         }catch (JSONException e){
             e.getMessage();
