@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">moviles_webservice</string>
+
+    <string name="vacio"></string>
+    <string name="titulo">MASCOTA</string>
+    <string name="id">Id</string>
+    <string name="nombre">Nombre</string>
+    <string name="raza">Raza</string>
+    <string name="edad">Edad</string>
+
+    <string name="btn_agregar">Agregar</string>
+    <string name="btn_actualizar">Actualizar</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="btn_eliminar">Eliminar</string>
+</resources>

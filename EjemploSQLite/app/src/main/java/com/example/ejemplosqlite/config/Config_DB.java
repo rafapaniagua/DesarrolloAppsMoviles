@@ -1,24 +1,17 @@
 package com.example.ejemplosqlite.config;
 
 public class Config_DB {
-
-    public static final String name_bd = "Libros";
+    public static final String name_db = "Libros";
     public static final int version_bd = 1;
 
-    public static final String [] script_db = {
-            "create table proveedor(id_proveedor INT primary key," +
-                    "nombre_proveedor TEXT," +
-                    "empresa TEXT);",
-            "create table categoria(id_categoria INT primary key," +
-                    "nombre_categoria TEXT);",
-            "create table producto(id_producto INT primary key," +
-                    "nombre_producto TEXT," +
-                    "cantidad INT," +
-                    "precio DECIMAL," +
-                    "fk_proveedor INT," +
-                    "fk_categoria INT," +
-                    "FOREIGN KEY (fk_proveedor) REFERENCES proveedor (id_proveedor)," +
-                    "FOREIGN KEY (fk_categoria) REFERENCES categoria (id_categoria));"
+    public static final String[] script_db =  {
+            "create table categoria(id_categoria int primary key AUTOINCREMENT,nombre_categoria varchar);",
+            "create table proveedor(id_proveedor int primary key,nombre_contacto_proveedor varchar,nombre_empresa varchar);",
+            "create table producto(id_producto int primary key,nombre_producto varchar,cantidad int," +
+                    "fk_proveedor int,fk_categoria int,precio decimal," +
+                    "FOREIGN KEY(fk_proveedor) REFERENCES proveedor(id_proveedor)," +
+                    "FOREIGN KEY(fk_categoria) REFERENCES categoria(id_categoria));"
     };
 
 }
+

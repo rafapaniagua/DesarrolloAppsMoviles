@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:text="@string/titulo"
+        android:textAlignment="center"
+        android:textColor="#F8000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:text="@string/id"
+        android:textColor="#141414"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/id"
+        android:inputType="number"
+        android:text="@string/vacio"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:text="@string/nombre"
+        android:textColor="#141414"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nombre"
+        android:inputType="textPersonName"
+        android:text="@string/vacio"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_raza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:text="@string/raza"
+        android:textColor="#141414"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_raza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/raza"
+        android:inputType="textPersonName"
+        android:text="@string/vacio"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:text="@string/edad"
+        android:textColor="#141414"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/edad"
+        android:inputType="number"
+        android:text="@string/vacio"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorVerde"
+        android:text="@string/btn_buscar"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_agregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorVerde"
+        android:text="@string/btn_agregar"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_actualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorVerde"
+        android:text="@string/btn_actualizar"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_eliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:background="@color/colorRojo"
+        android:text="@string/btn_eliminar"
+        android:textSize="18sp" />
+
+</LinearLayout>
