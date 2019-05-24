@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LectorCodigos</string>
+    <string name="resultado">Resultado</string>
+    <string name="escanear">Escanear</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Geolocalizacion</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="info">Info</string>
+    <string name="vacio"></string>
+</resources>
