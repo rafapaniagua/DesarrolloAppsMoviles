@@ -1,0 +1,84 @@
+-Navegar hasta el directorio
+cd c:\xampp\htdocs
+
+-Crear el proyecto
+composer create-project --prefer-dist laravel/laravel demo_api
+
+-Navegar hasta el nuevo directorio creado
+cd demo_api
+
+-Instalar dependencias
+composer install
+
+-Crear key de la aplicación
+(Cifrado, clave de seguridad)
+php artisan key:generate
+
+(Dentro del directorio, el archivo .env contiene la clave)
+(Archivo .env - Environment-AmbienteAplicación)
+
+-Probar aplicación
+php artisan serve
+
+(Genera dirección IP y puerto, si entramos a esto en el navegador, nos muestra página principal de Laravel)
+
+-Crear BD
+(Ir a MySQL y llamarla demo_api)
+create database demo_api
+
+-Configurar conexión a BD desde archivo .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=demo_api (Nombre de BD)
+DB_USERNAME=root
+DB_PASSWORD=
+
+-Crear archivo de migración
+php artisan make:migration table_materias
+
+(Ir a directorio, carpeta database, carpeta migrations)
+(Eliminar migraciones de create_users y create passwords)
+(Abrir migración table_materias)
+
+-Definir campos de tabla (increments,string,int)
+(Dentro del archivo de migracíón)
+(Se modifican funciones up-Crear y down-EliminarSiExiste)
+
+-Hacer migración
+php artisan migrate
+(Se crea tabla en BD)
+(Si se quiere deshacer la migración realizada php artisan migrate:rollback)
+
+-Crear modelo
+php artisan make:model Materias
+(Se ubica en el directorio, en la carpeta app, se llama Materias.php)
+(Tiene un extends de Model(Eloquent Model) que ya tiene muchos métodos cargados previamente)
+
+(Editamos el Modelo)
+
+-Crear controlador
+php artisan make:controller MateriasController -r
+(-r indica que es un recurso completo, que usará todos los métodos de acceso)
+(Crea automáticamente las funciones)
+(Se ubica en el directorio, en la carpeta Http\Controllers)
+
+-Dar de alta las rutas
+(Se vincula el controlador con un prefijo 'materias')
+(En el archivo api.php, que se sencuentra en el directorio, en la carpeta routes)
+
+-Obtener listado de todas las rutas registradas
+php artisan route:list
+
+-Importar modelo Materias dentro del controlador
+use App\Materias;
+
+-Darle funcionalidad al controlador
+(Se escriben las acciones en cada uno de los métodos)
+
+-Levantar el servidor
+php artisan serve
+(Para que acepte peticiones php artisan serve --host 0.0.0.0 --port 8000)
+
+-Mandar peticiones por cada método con diferentes acciones
+(Con Postman)
